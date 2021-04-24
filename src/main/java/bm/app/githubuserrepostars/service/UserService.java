@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -26,6 +28,12 @@ public class UserService {
             logger.info("The output returned.");
             return users;
         }
+    }
+
+    public int countTheStars(String username) throws IOException {
+        InputStreamReader reader = new InputStreamReader(provideTheUrl(username).openStream());
+        User[] users = new Gson().fromJson(reader, User[].class);
+       return Arrays.stream(users).mapToInt(user -> user.getStars()).sum();
     }
 
     private URL provideTheUrl(String username) throws MalformedURLException {

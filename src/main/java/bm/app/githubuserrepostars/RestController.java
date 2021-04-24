@@ -23,4 +23,9 @@ public class RestController {
         return userService.getAUser(username);
     }
 
+    @GetMapping("/users/{username}/repos/stars/sum")
+    public int getTheSumOfUserReposStars(@PathVariable String username) throws IOException {
+        return userService.countTheStars(username);
+    }
+
 }
