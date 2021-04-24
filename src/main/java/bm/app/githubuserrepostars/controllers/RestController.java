@@ -1,4 +1,4 @@
-package bm.app.githubuserrepostars;
+package bm.app.githubuserrepostars.controllers;
 
 import bm.app.githubuserrepostars.model.User;
 import bm.app.githubuserrepostars.service.UserService;
