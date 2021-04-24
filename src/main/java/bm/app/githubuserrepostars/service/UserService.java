@@ -18,8 +18,7 @@ public class UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public UserRepos[] getReposForAUser(String username) throws IOException {
-        InputStreamReader reader = new InputStreamReader(provideTheUrl(username).openStream());
-        UserRepos[] userRepos = new Gson().fromJson(reader, UserRepos[].class);
+        UserRepos[] userRepos = fetchDataFromExternalApi(username);
         if (userRepos.length == 0) {
             logger.error("Could not find a provided user.");
             return null;
@@ -30,9 +29,13 @@ public class UserService {
     }
 
     public int countTheStars(String username) throws IOException {
+       return Arrays.stream(fetchDataFromExternalApi(username)).mapToInt(user -> user.getStars()).sum();
+    }
+
+    private UserRepos[] fetchDataFromExternalApi(String username) throws IOException {
         InputStreamReader reader = new InputStreamReader(provideTheUrl(username).openStream());
         UserRepos[] userRepos = new Gson().fromJson(reader, UserRepos[].class);
-       return Arrays.stream(userRepos).mapToInt(user -> user.getStars()).sum();
+        return userRepos;
     }
 
     private URL provideTheUrl(String username) throws MalformedURLException {
