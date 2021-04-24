@@ -1,6 +1,6 @@
 package bm.app.githubuserrepostars.service;
 
-import bm.app.githubuserrepostars.model.User;
+import bm.app.githubuserrepostars.model.UserRepos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ class UserServiceTest {
         //given
         String name = "nitay";
         //when
-        User[] resultArray = userService.getAUser(name);
+        UserRepos[] resultArray = userService.getReposForAUser(name);
         //then
         assertThat(resultArray[0].getName()).isEqualTo("ai-deadlines");
     }
@@ -41,13 +41,13 @@ class UserServiceTest {
     void shouldReturnAPrePreparedArray() throws IOException {
         //given
         String name = "cyndaquil";
-        User[] pokemon = {new User("flaminglyGoodProject", 155),
-                          new User("apiOfTheFlame", 14),
-                          new User("fieryHedgehog", 36)};
+        UserRepos[] pokemon = {new UserRepos("flaminglyGoodProject", 155),
+                          new UserRepos("apiOfTheFlame", 14),
+                          new UserRepos("fieryHedgehog", 36)};
         //when
-        Mockito.when(userServiceMock.getAUser(name)).thenReturn(pokemon);
+        Mockito.when(userServiceMock.getReposForAUser(name)).thenReturn(pokemon);
         //then
-        assertThat(userServiceMock.getAUser(name)).isEqualTo(pokemon);
+        assertThat(userServiceMock.getReposForAUser(name)).isEqualTo(pokemon);
     }
 
     @BeforeEach

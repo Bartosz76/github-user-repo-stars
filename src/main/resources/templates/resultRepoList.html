@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="resultRepoList.css">
+</head>
+<style>
+  body {
+    background-color: mediumpurple;
+  }
+</style>
+<body>
+<div id="header">The results:</div>
+<div class="subheader">
+  <div th:each="repo : ${resultArray}">
+    <div>
+      <span th:text="${repo}"></span>
+      <div>-  -  -  -  -  -  -  -  -  -</div>
+    </div>
+    <div>
+      <br/>
+    </div>
+  </div>
+</div>
+<div class="button">
+  <form action="/landingpage" method="get">
+    <input type="submit" value="Back to menu.">
+  </form>
+</div>
+</body>
+</html>

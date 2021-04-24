@@ -14,10 +14,14 @@
     <div id="header">Welcome to the Github's user's repositories provider!</div>
     <div class="subheaderOne">Please, provide the name of the Github's user whose repositories you're interested in.</div>
     <div class="subheaderTwo">Then, choose whether you'd like to see the list of them or see the total number of stars they have!</div>
-        <form action="/getAUser" method="post">
-            <input class="input" type="text" name="username" placeholder="Username">
+        <form action="/repos" method="post">
+            <div class="input">
+            <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="buttons">
             <input type="submit" value="List user's repos.">
-            <input type="submit" formaction="/getTheStarsCount" value="Sum the stars.">
+            <input type="submit" formaction="/stars" value="Sum the stars.">
+            </div>
         </form>
 </body>
 </html>

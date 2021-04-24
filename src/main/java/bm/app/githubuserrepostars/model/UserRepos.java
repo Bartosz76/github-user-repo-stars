@@ -3,7 +3,7 @@ package bm.app.githubuserrepostars.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class UserRepos {
 
     @SerializedName("name")
     @Expose
@@ -12,10 +12,10 @@ public class User {
     @Expose
     private Integer stars;
 
-    public User() {
+    public UserRepos() {
     }
 
-    public User(String name, Integer stars) {
+    public UserRepos(String name, Integer stars) {
         this.name = name;
         this.stars = stars;
     }

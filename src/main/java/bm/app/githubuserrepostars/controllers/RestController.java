@@ -1,6 +1,6 @@
 package bm.app.githubuserrepostars.controllers;
 
-import bm.app.githubuserrepostars.model.User;
+import bm.app.githubuserrepostars.model.UserRepos;
 import bm.app.githubuserrepostars.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +19,8 @@ public class RestController {
     }
 
     @GetMapping("/users/{username}/repos")
-    public User[] getUserRepos(@PathVariable String username) throws IOException {
-        return userService.getAUser(username);
+    public UserRepos[] getUserRepos(@PathVariable String username) throws IOException {
+        return userService.getReposForAUser(username);
     }
 
     @GetMapping("/users/{username}/repos/stars/sum")

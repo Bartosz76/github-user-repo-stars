@@ -1,0 +1,51 @@
+#header {
+    text-align: center;
+    font-size: 40px;
+    background-color: lightgoldenrodyellow;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 50px;
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 5px solid black;
+
+    transition: all 2s;
+
+}
+
+#header:hover{
+    border-color: deepskyblue;
+    background: black;
+    color: silver;
+}
+
+.subheader{
+    text-align: center;
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border: 5px solid slategray;
+    font-size: 20px;
+    color: darkslateblue;
+
+    transition: all 2s;
+}
+
+.subheader:hover{
+    border-color: lightgoldenrodyellow;
+    background: darkslateblue;
+    color: lightgoldenrodyellow;
+}
+
+.button {
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-top: 20px;
+    transition: all 3s;
+}
