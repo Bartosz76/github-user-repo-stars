@@ -17,4 +17,5 @@ public class ThymeleafController {
     public String getLandingpage() {
         return "landingpage";
     }
+
 }
