@@ -4,6 +4,19 @@ This application can provide a list of all repositories for a user if
 given their name and additionally provide a sum of all the stars the
 user was awarded for their repositories.
 
+Technologies/tools used:
+- Java 8 (11 is not supported by Heroku),
+- Spring Boot,
+- Maven,
+- JUnit,
+- AssertJ,
+- Mockito,
+- Thymeleaf,
+- Lombok,
+- HTML,
+- CSS,
+- Hosted on Heroku Server.
+
 The application is operational as it is already hosted on Heroku server. :)
 
 The application can be developed further by extending the scope of its functionalities: <br>
