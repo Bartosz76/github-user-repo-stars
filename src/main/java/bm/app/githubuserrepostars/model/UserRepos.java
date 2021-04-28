@@ -1,9 +1,10 @@
 package bm.app.githubuserrepostars.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,11 +12,9 @@ import lombok.*;
 @Setter
 public class UserRepos {
 
-    @SerializedName("name")
-    @Expose
+    @JsonProperty("name")
     private String name;
-    @SerializedName(value = "stargazers_count")
-    @Expose
+    @JsonProperty("stargazers_count")
     private Integer stars;
 
     @Override
