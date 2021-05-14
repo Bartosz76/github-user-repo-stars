@@ -9,6 +9,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 import java.util.Collections;
 
+import static springfox.documentation.builders.PathSelectors.regex;
+
 @Configuration
 public class SwaggerConfiguration {
 
@@ -17,6 +19,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("bm.app.githubuserrepostars"))
+                .paths(regex("/api.*"))
                 .build()
                 .apiInfo(apiDetails());
     }
